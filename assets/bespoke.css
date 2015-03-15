@@ -16,12 +16,23 @@ RESET
 
 }
 
+.social-icons a.instagram:hover;
+.social-icons a.facebook:hover;
+.social-icons a.twitter:hover;
+.social-icons a.instagram,
+.social-icons a.facebook,
+.social-icons a.twitter,
 .social-icons a:hover;
 .social-icons a {
 
   background-color: transparent;
 
 }
+
+
+
+
+
 
 /*
 
@@ -71,6 +82,11 @@ HEADER
 
 }
 
+
+
+
+
+
 /*
 
 FOOTER
@@ -86,6 +102,9 @@ footer {
   padding: 40px;
 
 }
+
+
+
 
 
 
