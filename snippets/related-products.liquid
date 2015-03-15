@@ -1,0 +1,88 @@
+{% assign related_product_image_size = 'large' %}
+{% assign show_related = false %}
+  {% capture related_markup %}
+    <div id="related-products">
+      <h3>{{ 'products.product.related_title' | t }}</h3>
+
+        <div class="product-list related-{{ settings.prod_rel_meth }}">
+            {% if settings.prod_rel_meth == 'collection' %}
+				<!--
+                {% assign product_collection = collection %}
+          		{% unless product_collection %}{% assign need_new_collection = true %}{% else %}{% assign need_new_collection = false %}{% endunless %}
+                {% if need_new_collection or product_collection.handle == 'all' or product_collection.handle contains 'frontpage' %}
+                    {% for coll in product.collections %}
+                        {% unless coll.handle == 'all' or coll.handle contains 'frontpage' %}
+          					{% assign product_collection = coll %}
+                        {% endunless %}
+                    {% endfor %}
+                {% endif %}
+                {% assign prod_rel_count = 0 %}
+                {% assign prod_rel_limit_int = settings.prod_rel_limit | plus: 0 %}
+                {% assign prod_rel_limit_plus_one = prod_rel_limit_int | plus: 1 %}
+                {% paginate product_collection.products by prod_rel_limit_plus_one %}
+                    {% for relprod in product_collection.products %}
+                        {% if relprod.handle != product.handle and prod_rel_limit_int > prod_rel_count %}
+                            {% assign prod_rel_count = prod_rel_count | plus: 1 %}
+                            {% assign show_related = true %}
+          					--><a href="{{ relprod.url | within: collection }}" title="{{ relprod.title }}">{{ relprod.featured_image | product_img_url: related_product_image_size | img_tag: relprod.title }}<span class="title">{{ relprod.title }}</span></a><!--
+                        {% endif %}
+                    {% endfor %}
+                {% endpaginate %}
+				-->
+            {% elsif settings.prod_rel_meth == 'tag-coll' %}
+				<!--
+                {% for tag in product.tags %}
+                    {% if tag contains 'meta-related-collection-' %}
+                        {% assign product_collection_handle = tag | remove: 'meta-related-collection-' %}
+                        {% assign product_collection = collections[product_collection_handle] %}
+                        {% assign prod_rel_count = 0 %}
+                        {% assign prod_rel_limit_int = settings.prod_rel_limit | plus: 0 %}
+                        {% assign prod_rel_limit_plus_one = prod_rel_limit_int | plus: 1 %}
+                        {% paginate product_collection.products by prod_rel_limit_plus_one %}
+                            {% for relprod in product_collection.products %}
+                                {% if relprod.handle != product.handle and prod_rel_limit_int > prod_rel_count %}
+                                    {% assign prod_rel_count = prod_rel_count | plus: 1 %}
+                                    {% assign show_related = true %}
+          							--><a href="{{ relprod.url | within: collection }}" title="{{ relprod.title }}">{{ relprod.featured_image | product_img_url: related_product_image_size | img_tag: relprod.title }}<span class="title">{{ relprod.title }}</span></a><!--
+                                {% endif %}
+                            {% endfor %}
+                        {% endpaginate %}
+                    {% endif %}
+                {% endfor %}
+				-->
+            {% elsif settings.prod_rel_meth == 'tag-handle' %}
+                {% for tag in product.tags %}
+                    {% if tag contains 'meta-related-product-' %}{% assign show_related = true %}{% endif %}
+                {% endfor %}
+                <script>
+                //Load in related products via ajax
+                $(function(){
+                  Shopify.money_format = {{ shop.money_format | json }};
+                  var related_tags = {{ product.tags | json }};
+                  var i;
+                  var tags_count = 0;
+                  for(i=0; i<related_tags.length; i++) {
+                  if(related_tags[i].indexOf('meta-related-product-') >= 0) {
+                    tags_count++;
+                    if(tags_count > {{ settings.prod_rel_limit }}) {
+                      break;
+                    }
+                    var rel_handle = related_tags[i].substring('meta-related-product-'.length);
+                    $.getJSON('/products/'+rel_handle+'.js', function(data) {
+                      //Build product
+                      var $prod = $('<a/>').attr({ href: data.url, title: data.title });
+                      $('<img/>').attr({ src: data.featured_image.replace(/(\.jpg|\.png|\.jpeg|\.gif)/, '_{{ related_product_image_size }}$1'), alt: data.title }).css('opacity', 0).appendTo($prod);
+                      $('<span class="title"/>').html(data.title).appendTo($prod);
+                      $prod.appendTo('#related-products .product-list').imagesLoaded(function(){
+                        $prod.find('img').animate({opacity: 1}, 200);
+                      });
+                    });
+                  }
+                }
+                });
+                </script>
+            {% endif %}
+        </div>
+    </div><!-- /#related-products -->
+  {% endcapture %}
+{% if show_related %}{{ related_markup }}{% endif %}

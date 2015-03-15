@@ -1,0 +1,1205 @@
+<fieldset>
+  <legend>Alchemy Theme Settings</legend>
+  <div class="tc">
+    <p>Thank you for choosing the Alchemy theme by Clean Themes.</p>
+    <p><a class="btn large ssb" target="_blank" href="http://www.cleanthemes.co.uk/alchemy/">SUPPORT SITE: CLEANTHEMES.CO.UK</a></p>
+    <p>Need help? Contact us: <a href="mailto:shopify@cleanthemes.co.uk"><span class="mail-sent">shopify@cleanthemes.co.uk</span></a></p>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Store Logo</legend>
+  <div class='label complete ssb'><p>You can use either an image or a font for your store logo. When using an image, please upload 2 images - the second image shows on pages that don't have a background image set as the header, including the checkout pages. You can upload the same same image for both if it works for your site.</p></div>
+
+  <table class='able no-hover'>
+    <tr>
+      <td width='50%' class='border-right va-t'>
+        <table>
+          <tr class='tc va-t'>
+            <td colspan='2'><label><input type="radio" name="logo_type" value="image" />Enable image-only logo</label></td>
+          </tr>
+          <tr class='tc'>
+            <td colspan='2'><p class="divider-slim"></p></td>
+          </tr>
+          <tr>
+            <td colspan="2"><label for="logo_image_on">Logo image<br />for pages with header backgrounds</label></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="file" name="logo_on_header.png" id="logo_image_on" data-max-width="940" data-max-height="300" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr/></td>
+          </tr>
+          <tr>
+            <td colspan="2"><label for="logo_image_off">Alternative logo image<br />for pages without header backgrounds - <em>includes checkout</em></label></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="file" name="logo.png" id="logo_image" data-max-width="940" data-max-height="300" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr/></td>
+          </tr>
+          <tr>
+            <td><label for="logo_w">Logo width</label></td>
+            <td><input size='2' type="text" id="logo_w" name="logo_w" /> px</td>
+          </tr>
+          <tr>
+            <td><label for="logo_h">Logo height</label></td>
+            <td><input size='2' type="text" id="logo_h" name="logo_h" /> px</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <p>In order for logos to display correctly enter the exact height and width. The logos you upload above must be the exactly the same size.</p>
+              <p>To use a <em>retina</em> or <em>high-DPI</em> logo, upload an image exactly twice as large as the size you entered above. The theme will shrink it to fit.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td width='50%' class='va-t'>
+        <table>
+          <tr class='tc va-t'>
+            <td colspan='2'><label><input type="radio" name="logo_type" value="text" />Enable text-only logo</label></td>
+          </tr>
+          <tr class='tc'>
+            <td colspan='2'><p class="divider-slim"></p></td>
+          </tr>
+          <tr>
+            <td><label for="font_fam_logo">Select Logo Font</label><br /></td>
+            <td>
+              <select id="font_fam_logo" name="font_fam_logo">
+                <optgroup label="Web Safe">
+                  <option value="Arial, sans-serif">Arial</option>
+                  <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>
+                  <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                </optgroup>
+                <optgroup label="Google Web Fonts">
+                  <option value="GWF|Amatic+SC:400,700">Amatic SC</option>
+                  <option value="GWF|Armata:400,700">Armata</option>
+                  <option value="GWF|Lato:400,700">Lato</option>
+                  <option value="GWF|Lora:400,700">Lora</option>
+                  <option value="GWF|Montserrat:400,700">Montserrat</option>
+                  <option value="GWF|Special+Elite">Special Elite</option>
+                  <option value="GWF|Quantico">Quantico</option>
+                  <option value="GWF|CUSTOM">-- Custom --</option>
+                </optgroup>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Custom font name<br /><small>(if 'Custom' selected in dropdown above)</small></label></td>
+            <td><input type="text" name="font_fam_logo_cust" /></td>
+          </tr>
+          <tr>
+            <td colspan='2'><p><a href="http://cleanthemes.co.uk/pages/add-a-google-web-font-to-your-theme" target="_blank" >Click here</a> for help with Google fonts</p></td>
+          </tr>
+          <tr>
+            <td><label>Text size</label></td>
+            <td><input size='2' type="text" name="logo_size" value="26"/> px</td>
+          </tr>
+          <tr>
+            <td><label for="col_logo_overlay">Text colour<br /><small>for pages with header backgrounds</small></label></td>
+            <td><input class="color" id="col_logo_overlay" name="col_logo_overlay" value="#ffffff"/></td>
+          </tr>
+          <tr>
+            <td><label for="col_logo">Alternate text colour<br /><small>for pages without a header image</small></label></td>
+            <td class='va-t'><input class="color" id="col_logo" name="col_logo" value="#ffffff"/></td>
+          </tr>
+          <tr>
+            <td colspan="42">
+            <p>Using the above settings will display <a href="/admin/settings/general" target="blank">your store name</a> instead of your logo image.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td colspan="2"><h3>General logo settings</h3></td>
+    </tr>
+    <tr>
+      <td><label for="logo_mt">Space above Logo</label></td>
+      <td><input size='2' type="text" id="logo_mt" name="logo_mt" value="0" /> px</td>
+    </tr>
+    <tr>
+      <td><label for="logo_mb">Space below Logo</label></td>
+      <td><input size='2' type="text" id="logo_mb" name="logo_mb" value="0" /> px</td>
+    </tr>
+    <tr>
+      <td><label for="logo_hide_on_home">Hide logo on homepage</label></td>
+      <td><input type="checkbox" id="logo_hide_on_home" name="logo_hide_on_home"/></td>
+    </tr>
+    <tr>
+      <td><label for="logo_hide_on_mob">Hide logo on mobile devices</label></td>
+      <td><select id="logo_hide_on_mob" name="logo_hide_on_mob">
+        <option value="">Do not hide</option>
+        <option value="home">Homepage only</option>
+        <option value="all">All pages</option>
+        </select></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Typography</legend>
+  <h2>Font Families</h2>
+  <p>To use custom Google Web Fonts, go to <a href="http://www.google.com/webfonts">google.com/webfonts</a> and pick your font.
+    In the instructions section it will show you the address of the font, e.g 'http://fonts.googleapis.com/css?family=Averia+Libre:700' - enter the font part (eg: 'Averia+Libre:700') into the input, select 'Custom' and the template will do the rest.</p>
+  <table>
+    <tr>
+      <td><label for="font_fam_base">Base</label></td>
+      <td>
+        <select id="font_fam_base" name="font_fam_base">
+          <optgroup label="Web Safe">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Google Web Fonts">
+            <option value="GWF|Armata:400,700">Armata</option>
+            <option value="GWF|Lato:400,700">Lato</option>
+            <option value="GWF|Lora:400,700">Lora</option>
+            <option value="GWF|Merriweather:400,700">Merriweather</option>
+            <option value="GWF|Montserrat:400,700">Montserrat</option>
+            <option value="GWF|Open+Sans:400,700">Open Sans</option>
+            <option value="GWF|PT+Sans:400,700">PT Sans</option>
+            <option value="GWF|CUSTOM">-- Custom --</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Custom <small>(if 'Custom' selected in dropdown above)</small></label></td>
+      <td><input type="text" name="font_fam_base_cust" /></td>
+    </tr>
+
+    <tr>
+      <td><label for="font_fam_headings">Headings</label></td>
+      <td>
+        <select id="font_fam_headings" name="font_fam_headings">
+          <optgroup label="Web Safe">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Google Web Fonts">
+            <option value="GWF|Amatic+SC:400,700">Amatic SC</option>
+            <option value="GWF|Armata:400,700">Armata</option>
+            <option value="GWF|Lato:400,700">Lato</option>
+            <option value="GWF|Lora:400,700">Lora</option>
+            <option value="GWF|Montserrat:400,700">Montserrat</option>
+            <option value="GWF|Special+Elite">Special Elite</option>
+            <option value="GWF|Quantico">Quantico</option>
+            <option value="GWF|CUSTOM">-- Custom --</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Custom <small>(if 'Custom' selected in dropdown above)</small></label></td>
+      <td><input type="text" name="font_fam_headings_cust" /></td>
+    </tr>
+
+    <tr>
+      <td><label for="font_fam_nav">Navigation, buttons &amp; product blocks</label></td>
+      <td>
+        <select id="font_fam_nav" name="font_fam_nav">
+          <optgroup label="Web Safe">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Google Web Fonts">
+            <option value="GWF|Amatic+SC:400,700">Amatic SC</option>
+            <option value="GWF|Armata:400,700">Armata</option>
+            <option value="GWF|Lato:400,700">Lato</option>
+            <option value="GWF|Lora:400,700">Lora</option>
+            <option value="GWF|Montserrat:400,700">Montserrat</option>
+            <option value="GWF|Quantico">Quantico</option>
+            <option value="GWF|CUSTOM">-- Custom --</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Custom <small>(if 'Custom' selected in dropdown above)</small></label></td>
+      <td><input type="text" name="font_fam_nav_cust" /></td>
+    </tr>
+  </table>
+  <br /><hr />
+  <h2>Font Sizes and Scales</h2>
+  <table>
+
+    <tr>
+      <td><label>Base size</label></td>
+      <td colspan="2"><input type="text" name="font_size_base" value="16"/> px</td>
+    </tr>
+    <tr>
+      <td><label>Heading scale</label></td>
+      <td><input type="text" name="font_scale_headings" value="2" /></td>
+      <td><small>How many times bigger than the base text should the main headings be? Default: 2</small></td>
+    </tr>
+    <tr>
+      <td><label>Navigation scale</label></td>
+      <td><input type="text" name="font_scale_nav" value="0.9" /></td>
+      <td><small>How many times bigger than the base text should the main headings be? Default: 0.9</small></td>
+    </tr>
+
+  </table>
+  <br /><hr />
+  <h2>Miscellaneous</h2>
+  <table>
+
+    <tr>
+      <td><label for="head_star_motif">Show star motif under headings</label></td>
+      <td><input type="checkbox" id="head_star_motif" name="head_star_motif" checked="yes" /></td>
+    </tr>
+
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Colours</legend>
+  <table>
+    <tr>
+      <td colspan="2"><h3>General</h3></td>
+    </tr>
+    <tr>
+      <td><label for="col_text">Text</label></td>
+      <td><input class="color" id="col_text" name="col_text" value="#706f6f"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_headings">Headings</label></td>
+      <td><input class="color" id="col_headings" name="col_headings" value="#333333"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_links">Links</label></td>
+      <td><input class="color" id="col_links" name="col_links" value="#f04c40"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><h3>Backgrounds</h3></td>
+    </tr>
+    <tr>
+      <td><label for="col_content_bg">Central content background</label></td>
+      <td><input class="color" id="col_content_bg" name="col_content_bg"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_page_bg">Page background</label></td>
+      <td><input class="color" id="col_page_bg" name="col_page_bg"/></td>
+    </tr>
+    <tr>
+      <td><label for="bg_image_use">Use an image for the page background</label></td>
+      <td><input type="checkbox" id="bg_image_use" name="bg_image_use"/></td>
+    </tr>
+    <tr>
+      <td><label for="bg_image">Page background image</label></td>
+      <td><input type="file" id="bg_image" name="bg_custom.jpg" /></td>
+    </tr>
+    <tr>
+      <td><label for="bg_image_method">Background image type</label></td>
+      <td>
+        <select id="bg_image_method" name="bg_image_method">
+          <option value="repeat top center">Tiled vertically + horizontally</option>
+          <option value="repeat-x top center">Aligned to top, tiled horizontally</option>
+          <option value="repeat-y top center">Aligned to centre, tiled vertically</option>
+          <option value="no-repeat top center">Aligned to top, centred, no tiling</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><h3>Navigation</h3></td>
+    </tr>
+    <tr>
+      <td><label for="col_nav_links">Links</label></td>
+      <td><input class="color" id="col_nav_links" name="col_nav_links" value="#706f6f"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_nav_links_overlay">Links, when over header background image or colour</label></td>
+      <td><input class="color" id="col_nav_links_overlay" name="col_nav_links_overlay" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_drop_bg">Dropdown background</label></td>
+      <td><input type="text" class="color" id="col_drop_bg" name="col_drop_bg" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_drop_bord">Dropdown border</label></td>
+      <td><input type="text" class="color" id="col_drop_bord" name="col_drop_bord" value="#e3e0e1"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_drop_sub_bg">Dropdown submenu background</label></td>
+      <td><input type="text" class="color" id="col_drop_sub_bg" name="col_drop_sub_bg" value="#f4f4f4"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_drop_hov">Dropdown link hover</label></td>
+      <td><input type="text" class="color" id="col_drop_hov" name="col_drop_hov" value="#eeddcd"/></td>
+    </tr>
+    </table>
+  <table>
+    <tr>
+      <td colspan="2"><h3>Alternates</h3></td>
+    </tr>
+    <tr>
+      <td><label for="col_alt_text">Alternate text</label>
+        <small>Shown over thumbnail text blocks throughout store, and homepage blog excerpts</small></td>
+      <td><input type="text" class="color" id="col_alt_text" name="col_alt_text" value="#ad9c9c"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_alt_text_title">Alternate text titles</label>
+      <small>Shown over thumbnail text blocks throughout store, and homepage blog excerpts</small></td>
+      <td><input type="text" class="color" id="col_alt_text_title" name="col_alt_text_title" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_alt_text_bg">Alternate text background</label>
+      <small>Colour <em>behind</em> thumbnail text blocks throughout store, and homepage blog excerpts</small></td>
+      <td><input type="text" class="color" id="col_alt_text_bg" name="col_alt_text_bg" value="#775f5f"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_prod_sale">Products 'on sale' background</label>
+      <small>Any product with a higher 'Compare at price' will show this alternate colour</small></td>
+      <td><input type="text" class="color" id="col_prod_sale" name="col_prod_sale" value="#8a5252"/></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td colspan="2"><h3>Buttons</h3></td>
+    </tr>
+    <tr>
+      <td><label for="col_btn">Button text</label></td>
+      <td><input type="text" class="color" id="col_btn" name="col_btn" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_btn_bg">Button background</label></td>
+      <td><input type="text" class="color" id="col_btn_bg" name="col_btn_bg" value="#8a7676"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_scrollup">Scroll-to-top Image</label></td>
+      <td><select id="col_scrollup" name="col_scrollup">
+        <option value="white">White</option>
+        <option value="grey">Grey</option>
+        <option value="black">Black</option>
+        </select></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td colspan="2"><h3>Page header</h3>
+        <p>If activated, these colours will show behind the heading area. If you are using background images, they will show behind those images.<br/>
+        You can use a combination of images and / or colours for your headers. A common approach is to use an image for your homepage header, and flat colours for the rest of your store.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_use">Header background colours enabled</label></td>
+      <td><input type="checkbox" id="col_head_bg_use" name="col_head_bg_use" /></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_home">Homepage</label></td>
+      <td><input type="text" class="color" id="col_head_bg_home" name="col_head_bg_home" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_coll">Collection &amp; Search pages</label></td>
+      <td><input type="text" class="color" id="col_head_bg_coll" name="col_head_bg_coll" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_prod">Product page</label></td>
+      <td><input type="text" class="color" id="col_head_bg_prod" name="col_head_bg_prod" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_blog">Blogs &amp; articles</label></td>
+      <td><input type="text" class="color" id="col_head_bg_blog" name="col_head_bg_blog" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_cart">Cart page</label></td>
+      <td><input type="text" class="color" id="col_head_bg_cart" name="col_head_bg_cart" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_cust">Customer account pages</label></td>
+      <td><input type="text" class="color" id="col_head_bg_cust" name="col_head_bg_cust" value="#ffffff"/></td>
+    </tr>
+    <tr>
+      <td><label for="col_head_bg_page">All other pages <small>(excludes checkout)</small></label></td>
+      <td><input type="text" class="color" id="col_head_bg_page" name="col_head_bg_page" value="#ffffff"/></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Header background images</legend>
+  <h3>Behaviour</h3>
+  <table>
+    <tr>
+      <td><label for="head_img_mode">Scroll mode</label></td>
+      <td>
+        <select id="head_img_mode" name="head_img_mode">
+          <option value="none">Scroll with page</option>
+          <option value="para">50% scroll (parallax)</option>
+          <option value="fixed">No scroll</option>
+        </select>
+      </td>
+      <td><label for="head_img_shad">Show shadow along bottom</label></td>
+      <td><input type="checkbox" id="head_img_shad" name="head_img_shad"/></td>
+    </tr>
+    <tr>
+      <td><label for="head_img_fill">Fill mode</label></td>
+      <td>
+        <select id="head_img_fill" name="head_img_fill">
+          <option value="cover">Scale to fill</option>
+          <option value="repeat">Repeat</option>
+          <option value="centered">Centered</option>
+        </select>
+      </td>
+      <td><label for="head_img_hideonmob">Hide on small screens</label></td>
+      <td><input type="checkbox" id="head_img_hideonmob" name="head_img_hideonmob"/></td>
+    </tr>
+  </table>
+  <h3>Header Images</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Template</th>
+        <th>Use image</th>
+        <th>Image</th>
+        <th>Height</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h6>Homepage</h6></td>
+        <td><input type="checkbox" name="head_img_home_show"/></td>
+        <td><input type="file" name="head_img_home.jpg"/></td>
+        <td><input type="text" name="head_img_home_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>Collection &amp; search pages</h6></td>
+        <td><input type="checkbox" name="head_img_coll_show"/></td>
+        <td><input type="file" name="head_img_coll.jpg"/></td>
+        <td><input type="text" name="head_img_coll_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>Product page</h6></td>
+        <td><input type="checkbox" name="head_img_prod_show"/></td>
+        <td><input type="file" name="head_img_prod.jpg"/></td>
+        <td><input type="text" name="head_img_prod_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>Blogs &amp; articles</h6></td>
+        <td><input type="checkbox" name="head_img_blog_show"/></td>
+        <td><input type="file" name="head_img_blog.jpg"/></td>
+        <td><input type="text" name="head_img_blog_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>Cart page</h6></td>
+        <td><input type="checkbox" name="head_img_cart_show"/></td>
+        <td><input type="file" name="head_img_cart.jpg"/></td>
+        <td><input type="text" name="head_img_cart_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>Customer account pages</h6></td>
+        <td><input type="checkbox" name="head_img_cust_show"/></td>
+        <td><input type="file" name="head_img_cust.jpg"/></td>
+        <td><input type="text" name="head_img_cust_height"/>px</td>
+      </tr>
+      <tr>
+        <td><h6>All other pages</h6></td>
+        <td><input type="checkbox" name="head_img_page_show"/></td>
+        <td><input type="file" name="head_img_page.jpg"/></td>
+        <td><input type="text" name="head_img_page_height"/>px</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><small>'All other pages' acts as a default for the other pages, but excludes the checkout.</small></p>
+  <h3>Homepage only: text overlay</h3>
+  <p>You can show some text over the top of the homepage header image.</p>
+  <table>
+    <tr>
+      <td><label for="head_img_home_text_show">Show:</label></td>
+      <td><input type="checkbox" id="head_img_home_text_show" name="head_img_home_text_show"/></td>
+    </tr>
+    <tr>
+      <td><label for="head_img_home_text">Text:
+        <br/><small>Add a pipe followed by a number to set the font size, in percent, e.g. "Store name|400"</small>
+        </label></td>
+      <td><input id="head_img_home_text" name="head_img_home_text"/></td>
+    </tr>
+  </table>
+  <h3>Advanced: handle-specific collection headers</h3>
+  <table>
+    <tr>
+      <td><label>If you would like to have a different header image for each collection, enable this option. <input type="checkbox" name="head_img_coll_handled"/></label></td>
+    </tr>
+  </table>
+  <p>You will need to
+    <a target="_blank" href="/admin/settings/files">upload an image file</a> with the filename 'collection-header-handle.jpg',
+    where 'handle' is the <a target="_blank" href="http://docs.shopify.com/themes/liquid-variables/handle">handle</a> of the collection.</p>
+  <p>You will need to do this for every collection on your store, or it will encounter missing-file errors.</p>
+</fieldset>
+
+<fieldset>
+  <legend>Homepage setup</legend>
+    <h2 class="sb sst">Row ordering</h2>
+  <table><tr><td colspan="2">
+        <p>The homepage is designed in rows, and you are able to place these in any order you desire, allowing for a super flexible layout. Omitting any letter will automatically prevent that row from displaying.</p>
+    </td></tr>
+    <tr>
+      <td><ul class="indent">
+        <li>A: Text Row</li>
+        <li>B: Slideshow</li>
+        <li>C: Products</li>
+        <li>D: Adverts</li>
+        <li>E: Second Text Row</li>
+        <li>F: Blog</li>
+        <li>G: Custom HTML</li>
+    </ul></td>
+      <td>
+    <p class="label complete ssb">Enter the letter of each row in the order you want them to show, separated with a hyphen. <br /><br />E.g. <strong>D-C-A-B-E</strong>
+    <br /><br />Leave blank for default order</p>
+    </td></tr>
+</table>
+  <table>
+        <tr>
+            <td><label>Order of rows</label></td>
+            <td><input name="home_order" /></td>
+        </tr>
+    </table>
+  <br />
+  <h3>A: Text Row</h3>
+  <table>
+    <tr>
+      <td><label for="home_page_1">Select page of content to display</label></td>
+      <td><select class="page" id="home_page_1" name="home_page_1"></select></td>
+    </tr>
+  </table>
+  <br />
+  <h3>B: Slideshow</h3>
+  <p>Set this up in the 'Slideshow' section below</p>
+  <br />
+  <h3>C: Products</h3>
+  <table>
+    <tr>
+      <td><label for="home_prods_coll">Choose a collection of products to display</label></td>
+      <td><select class="collection" id="home_prods_coll" name="home_prods_coll"></select></td>
+    </tr>
+    <tr>
+      <td><label for="home_prods_perrow">How many products to show per row</label></td>
+      <td><select id="home_prods_perrow" name="home_prods_perrow">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select></td>
+    </tr>
+  </table>
+  <br />
+  <h3>D: Adverts</h3>
+  <p>Advert full width: 1024px wide, any height,<br/>Advert half width: 512px wide, any height<br/>Quarter width: each 256px wide, any height</p>
+  <table>
+    <tr><td colspan="2"><h3>Advert 1</h3></td></tr>
+    <tr>
+      <td><label for="home_ad_1_show">Show</label></td>
+      <td><input type="checkbox" name="home_ad_1_show" id="home_ad_1_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_1">Image</label></td>
+      <td><input type="file" name="home_ad_1.jpg" id="home_ad_1" data-max-width="2048" data-max-height="2048" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_1_text">Text<br/><small>Add a pipe followed by a number to set the font size, in percent, e.g. "Spring 2014|200"</small></label></td>
+      <td><input type="text" name="home_ad_1_text" id="home_ad_1_text" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_1_url">URL</label></td>
+      <td><input type="text" name="home_ad_1_url" id="home_ad_1_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_1_size">Width</label></td>
+      <td><select name="home_ad_1_size" id="home_ad_1_size">
+        <option value="quarter">Quarter</option>
+        <option value="half">Half</option>
+        <option value="full">Full</option>
+        </select></td>
+    </tr>
+    <tr><td colspan="2"><h3>Advert 2</h3></td></tr>
+    <tr>
+      <td><label for="home_ad_2_show">Show</label></td>
+      <td><input type="checkbox" name="home_ad_2_show" id="home_ad_2_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_2">Image</label></td>
+      <td><input type="file" name="home_ad_2.jpg" id="home_ad_2" data-max-width="2048" data-max-height="2048" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_2_text">Text<br/><small>Add a pipe followed by a number to set the font size, in percent, e.g. "Spring 2014|200"</small></label></td>
+      <td><input type="text" name="home_ad_2_text" id="home_ad_2_text" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_2_url">URL</label></td>
+      <td><input type="text" name="home_ad_2_url" id="home_ad_2_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_2_size">Width</label></td>
+      <td><select name="home_ad_2_size" id="home_ad_2_size">
+        <option value="quarter">Quarter</option>
+        <option value="half">Half</option>
+        <option value="full">Full</option>
+        </select></td>
+    </tr>
+    <tr><td colspan="2"><h3>Advert 3</h3></td></tr>
+    <tr>
+      <td><label for="home_ad_3_show">Show</label></td>
+      <td><input type="checkbox" name="home_ad_3_show" id="home_ad_3_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_3">Image</label></td>
+      <td><input type="file" name="home_ad_3.jpg" id="home_ad_3" data-max-width="2048" data-max-height="2048" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_3_text">Text<br/><small>Add a pipe followed by a number to set the font size, in percent, e.g. "Spring 2014|200"</small></label></td>
+      <td><input type="text" name="home_ad_3_text" id="home_ad_3_text" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_3_url">URL</label></td>
+      <td><input type="text" name="home_ad_3_url" id="home_ad_3_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_3_size">Width</label></td>
+      <td><select name="home_ad_3_size" id="home_ad_3_size">
+        <option value="quarter">Quarter</option>
+        <option value="half">Half</option>
+        <option value="full">Full</option>
+        </select></td>
+    </tr>
+    <tr><td colspan="2"><h3>Advert 4</h3></td></tr>
+    <tr>
+      <td><label for="home_ad_4_show">Show</label></td>
+      <td><input type="checkbox" name="home_ad_4_show" id="home_ad_4_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_4">Image</label></td>
+      <td><input type="file" name="home_ad_4.jpg" id="home_ad_4" data-max-width="2048" data-max-height="2048" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_4_text">Text<br/><small>Add a pipe followed by a number to set the font size, in percent, e.g. "Spring 2014|200"</small></label></td>
+      <td><input type="text" name="home_ad_4_text" id="home_ad_4_text" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_4_url">URL</label></td>
+      <td><input type="text" name="home_ad_4_url" id="home_ad_4_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_ad_4_size">Width</label></td>
+      <td><select name="home_ad_4_size" id="home_ad_4_size">
+        <option value="quarter">Quarter</option>
+        <option value="half">Half</option>
+        <option value="full">Full</option>
+        </select></td>
+    </tr>
+  </table>
+  <br />
+  <h3>E: Second text row</h3>
+  <table>
+    <tr>
+      <td><label for="home_page_2">Select page of content to display</label></td>
+      <td><select class="page" id="home_page_2" name="home_page_2"></select></td>
+    </tr>
+    <tr>
+      <td><label for="home_page_2_cols">Show two columns in this row</label></td>
+      <td><input type="checkbox" id="home_page_2_cols" name="home_page_2_cols"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_page_3">Select page of content to display in the second column</label></td>
+      <td><select class="page" id="home_page_3" name="home_page_3"></select></td>
+    </tr>
+  </table>
+  <br />
+  <h3>F: Blog row</h3>
+  <table>
+    <tr>
+      <td><label for="home_blog">Select blog to show</label></td>
+      <td><select class="blog" id="home_blog" name="home_blog"></select></td>
+    </tr>
+    <tr>
+      <td><label for="home_blog_img_above_title">Move image above title, if one exists in the excerpt</label></td>
+      <td><input type="checkbox" name="home_blog_img_above_title" id="home_blog_img_above_title" /></td>
+    </tr>
+  </table>
+  <h3>G: Custom HTML</h3>
+  <p>Suggestions: <a href="http://snapwidget.com/" target="_blank">Snapwidget</a></p>
+  <table>
+    <tr>
+      <td><label for="hom_cust_html">Custom HTML</label></td>
+      <td><textarea name="hom_cust_html" id="hom_cust_html"></textarea></td>
+    </tr>
+  </table>
+
+</fieldset>
+
+<fieldset>
+  <legend>Slideshow</legend>
+  <h3>B: Slideshow</h3>
+  <p>Ideal size for slides: 1024 x 600. The slideshow will automatically adjust itself to fit the height of your tallest image.</p>
+  <table>
+    <tr><td colspan="2"><h3>Slide 1</h3></td></tr>
+    <tr>
+      <td><label for="home_slide_1_show">Show</label></td>
+      <td><input type="checkbox" id="home_slide_1_show" name="home_slide_1_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_1">Image</label></td>
+      <td><input type="file" id="home_slide_1" name="home_slide_1.jpg" data-max-width="2048" data-max-height="2048"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_1_url">Link URL</label></td>
+      <td><input type="text" id="home_slide_1_url" name="home_slide_1_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_1_text">Text</label></td>
+      <td><input type="text" id="home_slide_1_text" name="home_slide_1_text" /></td>
+    </tr>
+    <tr><td colspan="2"><h3>Slide 2</h3></td></tr>
+    <tr>
+      <td><label for="home_slide_2_show">Show</label></td>
+      <td><input type="checkbox" id="home_slide_2_show" name="home_slide_2_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_2">Image</label></td>
+      <td><input type="file" id="home_slide_2" name="home_slide_2.jpg" data-max-width="2048" data-max-height="2048"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_2_url">Link URL</label></td>
+      <td><input type="text" id="home_slide_2_url" name="home_slide_2_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_2_text">Text</label></td>
+      <td><input type="text" id="home_slide_2_text" name="home_slide_2_text" /></td>
+    </tr>
+    <tr><td colspan="2"><h3>Slide 3</h3></td></tr>
+    <tr>
+      <td><label for="home_slide_3_show">Show</label></td>
+      <td><input type="checkbox" id="home_slide_3_show" name="home_slide_3_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_3">Image</label></td>
+      <td><input type="file" id="home_slide_3" name="home_slide_3.jpg" data-max-width="2048" data-max-height="2048"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_3_url">Link URL</label></td>
+      <td><input type="text" id="home_slide_3_url" name="home_slide_3_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_3_text">Text</label></td>
+      <td><input type="text" id="home_slide_3_text" name="home_slide_3_text" /></td>
+    </tr>
+    <tr><td colspan="2"><h3>Slide 4</h3></td></tr>
+    <tr>
+      <td><label for="home_slide_4_show">Show</label></td>
+      <td><input type="checkbox" id="home_slide_4_show" name="home_slide_4_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_4">Image</label></td>
+      <td><input type="file" id="home_slide_4" name="home_slide_4.jpg" data-max-width="2048" data-max-height="2048"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_4_url">Link URL</label></td>
+      <td><input type="text" id="home_slide_4_url" name="home_slide_4_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_4_text">Text</label></td>
+      <td><input type="text" id="home_slide_4_text" name="home_slide_4_text" /></td>
+    </tr>
+    <tr><td colspan="2"><h3>Slide 5</h3></td></tr>
+    <tr>
+      <td><label for="home_slide_5_show">Show</label></td>
+      <td><input type="checkbox" id="home_slide_5_show" name="home_slide_5_show" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_5">Image</label></td>
+      <td><input type="file" id="home_slide_5" name="home_slide_5.jpg" data-max-width="2048" data-max-height="2048"/></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_5_url">Link URL</label></td>
+      <td><input type="text" id="home_slide_5_url" name="home_slide_5_url" /></td>
+    </tr>
+    <tr>
+      <td><label for="home_slide_5_text">Text</label></td>
+      <td><input type="text" id="home_slide_5_text" name="home_slide_5_text" /></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Social icons</legend>
+  <table>
+    <tr>
+      <td><label>Show icons in</label></td>
+      <td>
+        <select name="soc_icon_location">
+          <option value="">Header and Footer</option>
+          <option value="head">Header only</option>
+          <option value="foot">Footer only</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Icon colour</label></td>
+      <td>
+        <select name="soc_icon_img">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Icon size in header <small>(and footer)</small></label></td>
+      <td>
+        <select name="soc_icon_size">
+          <option value="">Small</option>
+          <option value="large">Large</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label>Icon size for share icons</label></td>
+      <td>
+        <select name="soc_icon_size_share">
+          <option value="">Small</option>
+          <option value="large">Large</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <h3>Icon background colours</h3>
+  <table>
+    <tr>
+      <td><label>Main</label></td>
+      <td><input type="text" class="color" name="soc_icon_col" /></td>
+    </tr>
+    <tr>
+      <td><label>Use brand colours</label></td>
+      <td><input type="checkbox" name="soc_icon_defcols" /></td>
+    </tr>
+    <tr>
+      <td><label>Hover</label></td>
+      <td><input type="text" class="color" name="soc_icon_col_h" /></td>
+    </tr>
+    <tr>
+      <td><label>Use brand colours on hover</label></td>
+      <td><input type="checkbox" name="soc_icon_defcols_h" /></td>
+    </tr>
+  </table>
+  <h3>Your Social account links</h3>
+  <table>
+    <tr>
+      <td><label for="social_twitter_enabled">Twitter enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_twitter_enabled" name="social_twitter_enabled" class="checkbox" value="1"/>
+        <input name="social_twitter_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_facebook_enabled">Facebook enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_facebook_enabled" name="social_facebook_enabled" class="checkbox" value="1"/>
+        <input name="social_facebook_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_pinterest_enabled">Pinterest enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_pinterest_enabled" name="social_pinterest_enabled" class="checkbox" />
+        <input name="social_pinterest_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_rss_enabled">RSS enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_rss_enabled" name="social_rss_enabled" class="checkbox" value="1"/>
+        <input name="social_rss_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_tumblr_enabled">Tumblr enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_tumblr_enabled" name="social_tumblr_enabled" class="checkbox" value="1"/>
+        <input name="social_tumblr_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_vimeo_enabled">Vimeo enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_vimeo_enabled" name="social_vimeo_enabled" class="checkbox" value="1"/>
+        <input name="social_vimeo_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_youtube_enabled">YouTube enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_youtube_enabled" name="social_youtube_enabled" class="checkbox" value="1"/>
+        <input name="social_youtube_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_instagram_enabled">Instagram enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_instagram_enabled" name="social_instagram_enabled" class="checkbox" value="1"/>
+        <input name="social_instagram_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_flickr_enabled">Flickr enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_flickr_enabled" name="social_flickr_enabled" class="checkbox" value="1"/>
+        <input name="social_flickr_url" class="text" value=""/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="social_google_enabled">Google+ enabled / URL</label></td>
+      <td>
+        <input type="checkbox" id="social_google_enabled" name="social_google_enabled" class="checkbox" value="1"/>
+        <input name="social_google_url" class="text" value=""/>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Products</legend>
+  <h3>Collection page</h3>
+  <table>
+    <tr>
+      <td><label for="coll_prods_perrow">How many products to show per row</label></td>
+      <td><select id="coll_prods_perrow" name="coll_prods_perrow">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td><label>Predominant image ratio</label></td>
+      <td>
+        <select name="prod_thumb_img_ratio_simple">
+          <option value="150">Portrait (2x3)</option>
+          <option value="66.67">Landscape (3x2)</option>
+          <option value="100">Square</option>
+        </select>
+      </td>
+      <td>(You can override these settings in the advanced section below)</td>
+    </tr>
+  </table>
+  <br />
+  <h3>Product detail page</h3>
+  <table>
+    <tr>
+      <td><label for="prod_show_brand">Show brand name</label></td>
+      <td><input type="checkbox" id="prod_show_brand" name="prod_show_brand" /></td>
+    </tr>
+    <tr>
+      <td><label for="prod_singlevar_mode">What to show when there is only one variant</label></td>
+      <td><select id="prod_singlevar_mode" name="prod_singlevar_mode">
+        <option value="">Do not show dropdown or text</option>
+        <option value="text-withlabel">Show as text (with option name)</option>
+        <option value="text">Show as text (without option name)</option>
+        <option value="drop">Show as dropdown</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td><label for="prod_show_pick_a">Show 'Pick a [title]' text<br /><small>in variant dropdown</small></label></td>
+      <td><input type="checkbox" id="prod_show_pick_a" name="prod_show_pick_a" /></td>
+    </tr>
+    <tr>
+      <td><label for="prod_noajax">Go straight to cart page after adding product<br/><small>(a.k.a. disable AJAX add to cart)</small></label></td>
+      <td><input type="checkbox" id="prod_noajax" name="prod_noajax" /></td>
+    </tr>
+    <tr>
+      <td><label for="prod_nolightbox">Disable image lightbox</label></td>
+      <td><input type="checkbox" id="prod_nolightbox" name="prod_nolightbox" /></td>
+    </tr>
+  </table>
+  <br />
+  <h3>Related Products</h3>
+  <p>Tag-specified collection example:<br /><i>meta-related-collection-bluedresses</i><br />Tag-specified product handle example:<br /><i>meta-related-product-bluedress</i><br /></p>
+  <table>
+    <tr>
+      <td><label for="prod_rel_meth">Related products method</label></td>
+      <td><select name="prod_rel_meth">
+        <option value="collection">Same collection (automatic)</option>
+        <option value="tag-coll">Tag-specified collection</option>
+        <option value="tag-handle">Tag-specified product handle</option>
+        <option value="">None</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td><label>Related products limit</label></td>
+      <td><input type="text" name="prod_rel_limit" value="8" /></td>
+    </tr>
+    <tr>
+      <td><label>Show titles underneath</label></td>
+      <td><input type="checkbox" name="prod_rel_titles" /></td>
+    </tr>
+  </table>
+</fieldset>
+
+
+<fieldset>
+  <legend>Footer</legend>
+  <table>
+    <tr>
+      <td><label>Hide 'Theme by' link</label></td>
+      <td><input type="checkbox" name="theme_by_hide" /></td>
+    </tr>
+  </table>
+  <h3>Payment method icons</h3>
+  <table>
+    <tr>
+      <td><label>Icon colour</label></td>
+      <td colspan="3">
+        <select name="pay_icon_img">
+          <option value="payment_spr_white.png">Light</option>
+          <option value="payment_spr_grey.png">Dark</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="pay_paypal">PayPal</label></td>
+      <td><input type="checkbox" id="pay_paypal" name="pay_paypal" /></td>
+      <td><label for="pay_visa">Visa</label></td>
+      <td><input type="checkbox" id="pay_visa" name="pay_visa" /></td>
+    </tr>
+    <tr>
+      <td><label for="pay_mastercard">Mastercard</label></td>
+      <td><input type="checkbox" id="pay_mastercard" name="pay_mastercard" /></td>
+      <td><label for="pay_amex">American Express</label></td>
+      <td><input type="checkbox" id="pay_amex" name="pay_amex" /></td>
+    </tr>
+    <tr>
+      <td><label for="pay_discover">Discover</label></td>
+      <td><input type="checkbox" id="pay_discover" name="pay_discover" /></td>
+      <td><label for="pay_cirrus">Cirrus</label></td>
+      <td><input type="checkbox" id="pay_cirrus" name="pay_cirrus" /></td>
+    </tr>
+    <tr>
+      <td><label for="pay_maestro">Maestro</label></td>
+      <td><input type="checkbox" id="pay_maestro" name="pay_maestro" /></td>
+      <td><label for="pay_google_wallet">Google Wallet</label></td>
+      <td><input type="checkbox" id="pay_google_wallet" name="pay_google_wallet" /></td>
+    </tr>
+    <tr>
+      <td><label for="pay_dankort">Dankort</label></td>
+      <td><input type="checkbox" id="pay_dankort" name="pay_dankort" /></td>
+      <td><label for="pay_jcb">JCB</label></td>
+      <td><input type="checkbox" id="pay_jcb" name="pay_jcb" /></td>
+    </tr>
+    <tr>
+      <td><label for="pay_diners">Diners Club</label></td>
+      <td><input type="checkbox" id="pay_diners" name="pay_diners" /></td>
+      <td><label for="pay_bitcoin">Bitcoin</label></td>
+      <td><input type="checkbox" id="pay_bitcoin" name="pay_bitcoin" /></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Cart</legend>
+  <h2>Cart page</h2>
+  <table>
+    <tr>
+      <td><label>Enable 'terms &amp; conditions' checkbox in cart</label></td>
+      <td><input type="checkbox" name="cart_terms_show" /></td>
+    </tr>
+    <tr>
+      <td><label>Cart terms &amp; conditions page to link to, if the above is activated</label></td>
+      <td><select name="cart_terms_page" class="page" /></td>
+    </tr>
+    <tr>
+      <td><label>Show note input</label></td>
+      <td><input type="checkbox" name="cart_note_show" /></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>[Shopify] Multi-currency money options</legend>
+  <table>
+    <tr>
+      <td colspan="2">For this functionality to work in your shop, you are required to edit your money formats as per <a href="http://wiki.shopify.com/Do_Tell_Where_The_Money_Is" target="_blank">these instructions</a> ("Do tell where the money is").</td>
+    </tr>
+    <tr>
+      <td><label for="show_multiple_currencies">Show currency selector?</label></td>
+      <td><input type="checkbox" id="show_multiple_currencies" name="show_multiple_currencies" checked="checked" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>Although you will be able to display prices on your store front in different currencies, Shopify will still process orders in your shop's currency.</small></td>
+    </tr>
+    <tr>
+      <td><label for="currency_format">Money format</label></td>
+      <td>
+        <select name="currency_format" id="currency_format">
+          <option value="money_format">
+            Without Currency, ex: $10.00
+          </option>
+          <option value="money_with_currency_format" selected="selected">
+            With Currency, ex: $10 CAD
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="supported_currencies">Currencies you wish to support</label></td>
+      <td><input type="text" class="text long" name="supported_currencies" id="supported_currencies" value="CAD USD" /></td>
+    </tr>
+    <tr>
+      <td><label for="default_currency">Default currency</label></td>
+      <td><input type="text" class="text" name="default_currency" id="default_currency" value="CAD" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>Separate your currency codes with a space. Use the ISO 4217 3-letter currency code. Click <a target="_blank" href="http://www.xe.com/iso4217.php">here</a> for a complete list of currency codes. Example: <i>CAD USD</i>.</small></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+  <legend>Advanced</legend>
+  <h3>Product thumb ratio override</h3>
+  <table>
+    <tr><td colspan="3"><small>This will give more precise control over your thumbnail sizes<br />Experiment with these settings until you get the results you want.<br />Remember, if you have all images at the same aspect ratio, your store will have that lovely consistent look :)<br />To calculate: divide your most common image height by its width, then multiply by 100</small></td></tr>
+    <tr>
+      <td><label for="adv_ratio">Enable override</label> <input type="checkbox" id="adv_ratio" name="adv_ratio" /></td>
+      <td><label for="prod_thumb_img_ratio">Thumbnail image ratio<br/><small>66.67 = 3x2<br/>100 = square<br/>150 = 2x3</small></label></td>
+      <td><input type="text" id="prod_thumb_img_ratio" name="prod_thumb_img_ratio" value="150" /></td>
+    </tr>
+  </table><br /><hr />
+  <table>
+    <tr>
+      <td><label for="search_alt">Show the word 'SEARCH' in header</label></td>
+      <td><input type="checkbox" id="search_alt" name="search_alt" /></td>
+    </tr>
+    <tr>
+      <td><label for="search_prods_only">Limit search results to products only</label></td>
+      <td><input type="checkbox" id="search_prods_only" name="search_prods_only" /></td>
+    </tr>
+  </table><br /><hr />
+  <table>
+    <tr>
+      <td><label>Product image size constraint -<br />on product detail page</label></td>
+      <td><select name="prod_page_img_size">
+        <option value="grande">600</option>
+        <option value="1024x1024">1024</option>
+        <option value="2048x2048">2048</option>
+        </select></td>
+      <td><small>Set to the highest number if you have high resolution images of 2048 width or higher</small></td>
+    </tr>
+    </table><br /><hr />
+  <table>
+    <tr>
+      <td><label for="nav_coll_secdrops">Collapse second-tier dropdowns</label></td>
+      <td><input type="checkbox" id="nav_coll_secdrops" name="nav_coll_secdrops" /></td>
+    </tr>
+    <tr>
+      <td><label for="adv_nav">Enable advanced nav linking</label></td>
+      <td><input type="checkbox" id="adv_nav" name="adv_nav" /></td>
+    </tr>
+    <tr>
+      <td colspan="2">Enables a more complex way of setting up multi-tier menus, not recommended for most people<br/><a href="http://cleanthemes.co.uk/symmetry/advanced-advanced-nav/" target="_blank">READ THIS BEFORE ENABLING</a> <b>AS THIS WILL BREAK NORMAL DROPDOWN NAVIGATION</b></td>
+    </tr>
+  </table>
+</fieldset>

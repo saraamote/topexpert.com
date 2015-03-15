@@ -1,0 +1,169 @@
+{% capture text_row_1_html %}
+{% assign page = pages[settings.home_page_1] %}
+{% if page %}
+<div class="rte content-row">
+  {{ page.content }}
+</div>
+{% endif %}
+{% endcapture %}
+
+
+{% capture slideshow_html %}
+<div class="row">
+  <div class="flexslider">
+    <ul class="slides">
+      {% for i in (1..5) %}
+      {% capture show_idx %}home_slide_{{i}}_show{% endcapture %}
+      {% capture url_idx %}home_slide_{{i}}_url{% endcapture %}
+      {% capture text_idx %}home_slide_{{i}}_text{% endcapture %}
+      {% capture img_name %}home_slide_{{i}}.jpg{% endcapture %}
+      {% if settings[show_idx] %}
+      <li>
+        <a href="{{ settings[url_idx] }}">
+          <img src="{{ img_name | asset_url }}" alt="Slide {{ forloop.index }}" />
+        </a>
+        {% unless settings[text_idx] == empty %}
+        <div class="caption"><div class="rte">{{ settings[text_idx] }}</div></div>
+        {% endunless %}
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endcapture %}
+
+
+{% capture products_html %}
+{% assign collection = collections[settings.home_prods_coll] %}
+<div class="grid product-list clearfix">
+{% for product in collection.products %}
+  {% include 'product-grid-item' %}
+{% else %}
+  {% if collection.title != blank %}<p><em>{{ 'home_page.onboarding.no_products_html' | t: title: collection.title }}</em></p>{% endif %}
+{% endfor %}
+</div>
+{% endcapture %}
+
+
+{% capture ads_html %}
+<div class="grid clearfix">
+  {% for i in (1..4) %}
+  {% assign text_setting = 'home_ad_' | append: i | append: '_text' %}
+  {% assign url_setting = 'home_ad_' | append: i | append: '_url' %}
+  {% assign width_setting = 'home_ad_' | append: i | append: '_size' %}
+  {% assign show_setting = 'home_ad_' | append: i | append: '_show' %}
+  {% if settings[show_setting] %}
+  <div class="column {{ settings[width_setting] }} bleed img-block scaled-text-base" {% if settings[text_setting] contains '|' %}style="font-size:{{ settings[text_setting] | split: '|' | last }}%"{% endif %} data-text-scale-from="256">
+    {% assign text_part = settings[text_setting] | split: '|' | first %}
+    {{ 'home_ad_'| append: i | append: '.jpg' | asset_url | img_tag: text_part | link_to: settings[url_setting] }}
+
+    {% if settings[text_setting] != '' %}
+    <div class="overlay">
+      <div class="inner">
+        <span>
+          <a href="{{ settings[url_setting] }}" class="scaled-text">
+            {{ text_part }}
+          </a>
+        </span>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endcapture %}
+
+
+{% capture text_row_2_html %}
+{% assign page = pages[settings.home_page_2] %}
+{% assign page_second = pages[settings.home_page_3] %}
+
+{% if settings.home_page_2_cols %}
+<div class="grid clearfix">
+  <div class="column half">
+    {% endif %}
+
+    <div class="rte content-row">{{ page.content }}</div>
+
+    {% if settings.home_page_2_cols %}
+  </div>
+  <div class="column half">
+    <div class="rte content-row">{{ page_second.content }}</div>
+  </div>
+</div>
+{% endif %}
+{% endcapture %}
+
+
+{% capture blog_html %}
+{% assign blog = blogs[settings.home_blog] %}
+{% if blog and blog.articles.size > 0 %}
+<div class="alt-text-style grid clearfix">
+  {% for article in blog.articles limit: 2 %}
+  <div class="column full article-excerpt">
+
+    {% if article.excerpt == blank %}
+    {% assign split_content = article.content | strip_html | truncate: 150 %}
+    {% else %}
+    {% assign split_content = article.excerpt %}
+    {% endif %}
+
+    {% if settings.home_blog_img_above_title %}
+    {% include 'split_images_from_content' with split_content %}
+
+    <div class="image-head"><a href="{{ article.url }}">{{ split_images }}</a></div>
+    {% endif %}
+
+    <div>
+
+      {{ split_content }}
+
+      <h4>{{ article.title | link_to: article.url }}</h4>
+
+    </div>
+
+    <p><a class="read-more" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endcapture %}
+
+
+{% capture custom_html %}
+<div class="grid">
+  {{ settings.hom_cust_html }}
+</div>
+{% endcapture %}
+
+{% comment %}
+Display rows in the selected order.
+
+A: Text Row
+B: Slideshow
+C: Products
+D: Adverts
+E: Second Text Row
+F: Blog
+G: Custom HTML
+{% endcomment %}
+
+{% if settings.home_order == empty %}
+    {% assign split_order = 'A-B-C-D-E-F-G' | split: '-' %}
+{% else %}
+    {% assign split_order = settings.home_order | split: '-' %}
+{% endif %}
+
+{% for item in split_order %}
+{% if item == 'A' %} <!-- Slot A --> {{ text_row_1_html }}
+{% elsif item == 'B' %} <!-- Slot B --> {{ slideshow_html }}
+{% elsif item == 'C' %} <!-- Slot C --> {{ products_html }}
+{% elsif item == 'D' %} <!-- Slot D --> {{ ads_html }}
+{% elsif item == 'E' %} <!-- Slot E --> {{ text_row_2_html }}
+{% elsif item == 'F' %} <!-- Slot F --> {{ blog_html }}
+{% elsif item == 'G' %} <!-- Slot G --> {{ custom_html }}
+{% endif %}
+{% endfor %}
+

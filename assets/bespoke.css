@@ -1,0 +1,47 @@
+/*
+
+HEADER
+
+*/
+
+/* logo */
+
+#pageheader .logo .image img {
+
+  position: fixed;
+  width: 20px;
+  left: 60px;
+  top: 25px;
+
+}
+
+/* navigation */
+
+@media screen and (min-width: 768px){
+
+  #pageheader .links-etc {
+
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    right: 0;
+    left: 0;
+
+  }
+
+  .header-nav {
+
+    display: inline-block;
+
+  }
+
+  .header-nav ul {
+
+    position: absolute;
+    left: 115px;
+    top: 0;
+
+  }
+
+}

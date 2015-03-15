@@ -1,0 +1,245 @@
+{% comment %} Google Fonts {% endcomment %}
+
+{% for i in (1..4) %}
+{% capture font_setting_index %}{% cycle 'font_group': 'font_fam_base', 'font_fam_headings', 'font_fam_nav', 'font_fam_logo' %}{% endcapture %}
+{% capture font_setting_cust_index %}{{ font_setting_index }}_cust{% endcapture %}
+{% assign font_family_split = settings[font_setting_index] | split: '|' %}
+{% assign curr_font_family = settings[font_setting_index] %}
+{% if settings[font_setting_index] == 'GWF|CUSTOM' %}
+@import url(https://fonts.googleapis.com/css?family={{ settings[font_setting_cust_index] | replace: ' ', '+' }});
+{% elsif font_family_split.first == 'GWF' %}
+@import url(https://fonts.googleapis.com/css?family={{ font_family_split.last | replace: ' ', '+' }});
+{% endif %}
+{% endfor %}
+
+{% for i in (1..4) %}
+{% capture font_setting_index %}{% cycle 'font_group': 'font_fam_base', 'font_fam_headings', 'font_fam_nav', 'font_fam_logo' %}{% endcapture %}
+{% capture font_setting_cust_index %}{{ font_setting_index }}_cust{% endcapture %}
+{% assign font_family_split = settings[font_setting_index] | split: '|' %}
+{% assign curr_font_family = settings[font_setting_index] %}
+{% if settings[font_setting_index] == 'GWF|CUSTOM' %}
+{% assign curr_font_family = settings[font_setting_cust_index] | replace: '+', ' ' | split: ':' | first %}
+{% elsif font_family_split.first == 'GWF' %}
+{% assign curr_font_family = font_family_split.last | replace: '+', ' ' | split: ':' | first %}
+{% endif %}
+{% if font_setting_index == 'font_fam_base' %}{% capture body_font %}{{ curr_font_family }}, Arial, sans-serif{% endcapture %}
+{% elsif font_setting_index == 'font_fam_headings' %}{% capture headings_font %}{{ curr_font_family }}, Arial, serif{% endcapture %}
+{% elsif font_setting_index == 'font_fam_nav' %}
+{% elsif font_setting_index == 'font_fam_logo' %}{% capture logo_font %}{{ curr_font_family }}, Arial, sans-serif{% endcapture %}
+{% endif %}
+{% endfor %}
+
+
+
+body {
+  font-family: {{ body_font }};
+  font-size: {{ settings.font_size_base }}px;
+  line-height: 1.5em;
+
+  {% if settings.bg_image_use %}
+  background: {{ settings.col_page_bg }} url({{ 'bg_custom.jpg' | asset_url }}) {{ settings.bg_image_method }};
+  {% else %}
+  background: {{ settings.col_page_bg }};
+  {% endif %}
+}
+
+#main,
+#header #tagline,
+#footer,
+#container.slim #main,
+#container.slim #footer {
+  background: {{ settings.col_content_bg }};
+  color: {{ settings.col_text }};
+  width: auto;
+  padding: 10px 0;
+}
+
+#main {
+}
+
+#header,
+#container.slim #header {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  border-bottom: 1px solid {{ settings.col_text }};
+}
+
+#header #tagline .title {
+  display: block;
+  color: {{ settings.col_logo }};
+  font-family: {{ logo_font }};
+  font-size: {{ settings.logo_size }}px;
+  font-weight: normal;
+  line-height: 1.5em;
+}
+
+#footer {
+  padding: 20px 0;
+  margin: 0;
+  width: auto;
+  border-top: 1px solid {{ settings.col_text }};
+}
+
+h1,h2,h3,h4,h5,h6,
+.group h3, .pgroup h3,
+#cost, #order-num, #overview h2,
+h4.active-customer,
+#header #tagline {
+  font-family: {{ headings_font }};
+  font-size: {{ settings.font_scale_headings }}em;
+  font-weight: normal;
+  line-height: 1.2em;
+  color: {{ settings.col_headings }};
+  text-shadow: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#header #tagline {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+a,
+a:hover,
+#overview a,
+#thumbs h3 span {
+  color: {{ settings.col_links }};
+}
+
+#container {
+  font-size: 1em;
+}
+
+label {
+  font-weight: normal;
+}
+
+#thumbs span,
+#overview .hint,
+h1 span.subtitle,
+#steps {
+  color: inherit;
+  font-style: normal;
+}
+
+#steps {
+  font-size: 175%;
+}
+
+#thumbs span {
+  font-size: 100%;
+}
+
+#thumbs td {
+  font-size: 1em;
+}
+
+#thumbs h3 {
+  font-size: 1.1em;
+  line-height: 1.2em;
+  margin: 0 0 5px;
+}
+
+#thumbs div {
+  margin-right: 10px;
+}
+
+.form td input.short,
+.form td input {
+  width: 230px;
+}
+
+#thumbs div,
+#wallet,
+#products,
+#overview,
+#email,
+#addresses,
+#buttons,
+.group {
+  border: none;
+  background: transparent;
+}
+
+div.wallet-highlight {
+  background-color: #ddd;
+}
+
+#email label {
+  margin-bottom: 10px;
+  font-size: 100%;
+}
+
+#email input {
+  font-size: 100%;
+}
+
+#overview {
+  padding: 20px;
+}
+
+#cost {
+  margin-bottom: 0;
+  font-size: 3em;
+}
+
+{% if settings.logo_type == "image" %}
+#container.slim {
+  min-width: {{ settings.logo_w }}px;
+}
+
+#tagline .title {
+  display: none;
+}
+
+#logo {
+  width: {{ settings.logo_w }}px;
+  height: {{ settings.logo_h }}px;
+  margin: {{ settings.logo_mt }}px auto {{ settings.logo_mb }}px;
+  background: url({{ 'logo.png' | asset_url }}) no-repeat left top;
+  background-size: 100%; /* size to fit on decent browsers */
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader
+            (src='{{ 'logo.png' | asset_url }}',sizingMethod='scale'); /* guess */
+}
+{% endif %}
+
+input,
+textarea,
+.form td input {
+  color: {{ settings.col_text }};
+  border: 1px solid {{ settings.col_text }};
+  background: transparent;
+  padding: 0.3em 0.6em;
+  max-width: 100%;
+  font-size: {{ settings.font_size_base }}px;
+}
+
+input[type=checkbox],
+.form td input[type=checkbox] {
+  width: auto;
+}
+
+button,
+input[type=submit],
+.btn, a.btn, .btn:hover, a.btn:hover,
+#buttons input {
+  font-size: {{ settings.font_scale_nav }}em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: {{ settings.col_btn_bg }};
+  color: {{ settings.col_btn }};
+  line-height: 1em;
+  border: none;
+  padding: 9px 1em 10px;
+  vertical-align: middle;
+  width: auto;
+  text-shadow: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-right: 15px;
+}
