@@ -102,7 +102,7 @@
 {% if blog and blog.articles.size > 0 %}
 <div class="alt-text-style grid clearfix">
   {% for article in blog.articles limit: 2 %}
-  <div class="column full article-excerpt">
+  <div class="column full article-excerpt bespoke-journal-preview">
 
     {% if article.excerpt == blank %}
     {% assign split_content = article.content | strip_html | truncate: 150 %}
@@ -120,11 +120,13 @@
 
       {{ split_content }}
 
-      <h4>{{ article.title | link_to: article.url }}</h4>
+      <p class="journal-handle">{{ blog.handle | link_to: blog.url }}</h4></p>
+
+      <h4 class="journal-title">{{ article.title | link_to: article.url }}</h4>
 
     </div>
 
-    <p><a class="read-more" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
+    <p><a class="read-more" href="{{ article.url }}">{{ 'blogs.article.read_more' | t }}</a></p>
   </div>
   {% endfor %}
 </div>

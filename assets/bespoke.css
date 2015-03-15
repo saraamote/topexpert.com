@@ -45,3 +45,32 @@ HEADER
   }
 
 }
+
+
+
+/*
+
+HOMEPAGE
+
+*/
+
+/* blog preview */
+
+.bespoke-journal-preview {
+
+  text-transform: uppercase;
+  font-size: 12px;
+
+}
+
+.journal-handle {
+
+  border-bottom: 1px solid #000;
+
+}
+
+.journal-title {
+
+  font-size: 24px;
+
+}
