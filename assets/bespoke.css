@@ -16,13 +16,13 @@ RESET
 
 }
 
-.social-icons a.instagram:hover;
-.social-icons a.facebook:hover;
-.social-icons a.twitter:hover;
+.social-icons a.instagram:hover,
+.social-icons a.facebook:hover,
+.social-icons a.twitter:hover,
 .social-icons a.instagram,
 .social-icons a.facebook,
 .social-icons a.twitter,
-.social-icons a:hover;
+.social-icons a:hover,
 .social-icons a {
 
   background-color: transparent;
@@ -54,6 +54,14 @@ HEADER
 /* navigation */
 
 @media screen and (min-width: 768px){
+
+  #pageheader .links-etc,
+  #pageheader .links-etc .upper-link {
+
+    line-height: 3em;
+    font-size: 1em;
+
+  }
 
   #pageheader .links-etc {
 
@@ -95,14 +103,21 @@ FOOTER
 
 footer {
 
+  padding: 40px 40px 0 40px;
   text-transform: uppercase;
   background: #000000;
   text-align: center;
   color: #ffffff;
-  padding: 40px;
 
 }
 
+.copyright {
+
+  padding: 30px 0 0 0;
+  font-weight: 200;
+  font-size: 8px;
+
+}
 
 
 
@@ -124,15 +139,31 @@ HOMEPAGE
 
 }
 
+.bespoke-journal-preview .read-more,
+.journal-handle {
+
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-color 200ms;
+  transition: border-color 200ms;
+  margin: 10px 5px 5px 5px;
+  display: inline-block;
+
+}
+
+.bespoke-journal-preview .read-more:hover,
 .journal-handle {
 
   border-bottom: 1px solid #000;
-  display: inline-block;
 
 }
 
 .journal-title {
 
+  padding: 5px 20px;
+  max-width: 480px;
   font-size: 24px;
+  margin: auto;
 
 }
+
+.bespoke-journal-preview .read-more {}

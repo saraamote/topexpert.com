@@ -1,0 +1,382 @@
+{% assign variant = product.selected_or_first_available_variant %}
+{% assign featured_image = product.selected_or_first_available_variant.featured_image | default:product.featured_image %}
+<div class="product" itemscope itemtype="http://schema.org/Product">
+
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+  <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}" />
+  {% for variant in product.variants %}
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="{{ variant.price | money_without_currency | strip_html }}" />
+    <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+    {% if product.available %}
+    <link itemprop="availability" href="http://schema.org/InStock" />
+    {% else %}
+    <link itemprop="availability" href="http://schema.org/OutOfStock" />
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <form action="/cart/add" method="post" enctype="multipart/form-data">
+
+    <!-- bespoke description -->
+
+    <div class="myaffix bespoke-product-description">
+
+      <h1 itemprop="name">
+
+        {{ product.title }}
+
+      </h1>
+
+      <p itemprop="description">
+
+        {{ product.description }}
+
+      </p>
+
+      {% include 'social-sharing' %}
+
+    </div>
+
+    <!-- end bespoke description -->
+
+    <!-- bespoke photos -->
+
+    {% assign display_image_size = settings.prod_page_img_size %}
+
+    <div class="bespoke product-photos">
+
+      {% for image in product.images %}
+
+      <a {% if image.src == featured_image %} class="active" {% endif %} title="{{ image.alt | escape }}" href="{{ image | product_img_url: 'master' }}" data-display-url="{{ image | product_img_url: display_image_size }}">
+
+        <img src="{{ image | img_url: 'grande' }}" alt="{{ image.alt | escape }}"/>
+
+      </a>
+
+      {% endfor %}
+
+
+    </div>
+
+    <!-- end bespoke photos -->
+
+    <!-- bespoke purchase -->
+
+    <div class="myaffix bespoke-product-purchase">
+
+      {% if variant.compare_at_price > variant.price %}
+
+      <p>
+
+        <span class="sale-label">{{ 'products.product.sale' | t }}</span>
+
+      </p>
+
+      {% endif %}
+
+      {% if settings.prod_show_brand %}
+
+      {% assign product_vendor_handle = product.vendor | handle %}
+
+      {% if collections[product_vendor_handle].handle == product_vendor_handle %}
+
+      {% assign vendor_url = collections[product_vendor_handle].url %}
+
+      {% else %}
+
+      {% assign vendor_url = product.vendor | url_for_vendor %}
+
+      {% endif %}
+
+      <p class="brand" itemprop="brand">
+
+        {{ product.vendor | link_to: vendor_url }}
+
+      </p>
+
+      {% endif %}
+
+      {% unless product.variants.size != 1 or product.variants.first.title contains 'Default' %}
+
+      {% if settings.prod_singlevar_mode contains 'text' %}
+
+      <div class="variant-info">
+
+        {% for option in product.options %}
+
+        {% assign option_key = 'option' | append: forloop.index %}
+
+        <span class="option">
+
+          {% if settings.prod_singlevar_mode contains 'withlabel' %}
+
+          <span class="label">
+
+            {{ option }}:
+
+          </span>
+
+          {% endif %}
+
+          {{ product.variants.first[option_key] }}
+
+        </span>
+
+        {% unless forloop.last %},{% endunless %}
+
+        {% endfor %}
+
+      </div>
+
+      {% endif %}
+
+      {% endunless %}
+
+      {% if product.available %}
+
+      <div class="product-form">
+
+        {% assign hide_default_title = false %}
+        {% if product.variants.size == 1 %}
+        {% if product.variants.first.title contains 'Default' %}
+        {% assign hide_default_title = true %}
+        {% endif %}
+        {% unless settings.prod_singlevar_mode contains 'drop' %}
+        {% assign hide_default_title = true %}
+        {% endunless %}
+        {% endif %}
+
+        <p>
+
+          {{ variant.price | money }}
+
+        </p>
+
+        <div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
+
+          <select id="product-select" name="id" class="hidden">
+
+            {% for variant in product.variants %}
+
+            <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+
+              {{ variant.title }} - {{ variant.price | money }}
+
+            </option>
+
+            {% endfor %}
+
+          </select>
+
+        </div>
+
+        <div id="product-add">
+
+          <button name="add" id="add">
+
+            {{ 'products.product.add_to_cart' | t }}
+
+          </button>
+
+        </div>
+
+      </div>
+      <!-- .product-form -->
+
+      <div id="backorder" class="hidden">
+      <p><span id="selected-variant"></span> {{ 'products.product.backorder' | t }}</p>
+      </div>
+
+      {% else %}
+      <h5>{{ 'products.product.product_unavailable' | t }}</h5>
+      {% endif %}
+
+    </div>
+
+    <!-- end bespoke purchase -->
+
+  </form>
+
+  <div>
+
+    {% include 'related-products' %}
+
+  </div>
+
+</div>
+
+<script>
+
+var selectCallback = function(variant, selector) {
+
+  if (variant) {
+
+    // Selected a valid variant that is available.
+    if (variant.available) {
+
+      // Enabling add to cart button.
+      var addBtnText = Shopify.formatMoney(variant.price, {{ shop.money_format | json }});
+      if ( variant.compare_at_price > variant.price ) {
+        jQuery('#add').addClass('on-sale');
+        addBtnText += ' <span class="pre-sale-price">' + Shopify.formatMoney(variant.compare_at_price, {{ shop.money_format | json }}) + '</span>';
+      } else {
+        jQuery('#add').removeClass('on-sale');
+      }
+      addBtnText += ' <span class="div">|</span> ' + {{ 'products.product.add_to_cart' | t | json }};
+      jQuery('#add').removeClass('disabled').removeAttr('disabled').html(addBtnText);
+
+      // If item is backordered yet can still be ordered, we'll show special message.
+      if (variant.inventory_management && variant.inventory_quantity <= 0) {
+        jQuery('#selected-variant').html({{ product.title | json }}{% unless hide_default_title %} + ' - ' + variant.title{% endunless %});
+        jQuery('#backorder').removeClass("hidden");
+      } else {
+        jQuery('#backorder').addClass("hidden");
+      }
+
+    } else {
+      // Variant is sold out.
+      jQuery('#backorder').addClass('hidden');
+      jQuery('#add').html({{ 'products.variant.out_of_stock' | t | json }}).addClass('disabled').attr('disabled', 'disabled');
+    }
+
+  } else {
+    // variant doesn't exist.
+    var html = {{ 'products.variant.non_existent' | t | json }};
+    var anySelectsEmpty = $('.selector-wrapper select').filter(function(){ return $(this).val() == ''; }).length > 0;
+    if(anySelectsEmpty) {
+      html = {{ product.price | money | json }} + ' <span class="div">|</span> ' + {{ 'products.product.add_to_cart' | t | json }};
+    }
+    jQuery('#backorder').addClass('hidden');
+    jQuery('#add').html(html).addClass('disabled').attr('disabled', 'disabled');
+  }
+
+
+  if (variant && variant.featured_image) {
+    var newImage = Shopify.Image.removeProtocol(variant.featured_image.src);
+    //Find and click matching thumb
+    $('.thumbnails a.thumb').filter('[href="' + newImage + '"]').trigger('click');
+  }
+};
+
+
+{% if product.available %}
+jQuery(function($) {
+
+  new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: {% if settings.prod_show_pick_a and hide_default_title == false %}false{% else %}true{% endif %} });
+
+  // Add label if only one product option and it isn't 'Title'.
+  {% if product.options.size == 1 and product.options.first != 'Title' %}
+    $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+  {% endif %}
+
+  {% if settings.prod_show_pick_a and hide_default_title == false %}
+  {% for option in product.options %}
+  $('.single-option-selector:eq({{ forloop.index0 }})').prepend('<option value="">{{ 'products.product.pick_a' | t }} {{ product.options[forloop.index0] }}</option>').val('').trigger('change');
+  {% endfor %}
+  {% endif %}
+});
+{% endif %}
+</script>
+
+<style>
+
+  .bespoke-product-description,
+  .bespoke-product-purchase,
+  .bespoke.product-photos {
+
+    display: inline-block;
+    vertical-align: top;
+
+  }
+
+  /* left and right content */
+
+  .bespoke-product-description,
+  .bespoke-product-purchase {
+
+    width: 30%;
+    background: pink;
+
+  }
+
+  .bespoke-product-description {
+
+    left: 0;
+
+  }
+
+  .bespoke-product-purchase {
+
+    right: 0;
+
+  }
+
+  /* product photos */
+
+  .bespoke.product-photos {
+
+    background: grey;
+    width: 40%;
+
+  }
+
+  .bespoke.product-photos img {
+
+    display: block;
+    margin: auto;
+
+  }
+
+
+  /* social icons */
+
+  .product .social-icons a {
+
+    background-image: url("//cdn.shopify.com/s/files/1/0760/4885/t/4/assets/social_spr_dark_2x.png?18183108224224727529");
+
+  }
+
+
+</style>
+
+<script type="text/javascript">
+
+  $( function() {
+
+    $( '.myaffix' ).affix({
+
+      offset : {
+
+        bottom : function () {
+
+          return ( document.body.clientHeight - $( '#related-products' )[ 0 ].offsetTop );
+
+        }
+
+      }
+
+    });
+
+  });
+
+</script>
+
+<style>
+
+  .myaffix.affix {
+
+    transition:  all 1s;
+    position: fixed;
+    top: 200px;
+
+  }
+
+  .myaffix.affix-bottom {
+
+    transition:  all 1s;
+    position: absolute;
+
+  }
+
+</style>
