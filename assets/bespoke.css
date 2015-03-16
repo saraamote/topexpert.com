@@ -30,6 +30,11 @@ RESET
 
 }
 
+button:hover, input[type=submit]:hover, .button:hover, .sale-label:hover {
+
+  background: transparent;
+
+}
 
 
 
@@ -178,6 +183,59 @@ PRODUCT PAGES
 
 */
 
+/* social icons */
+
+.product .social-icons a {
+
+  background-image: url("//cdn.shopify.com/s/files/1/0760/4885/t/4/assets/social_spr_dark_2x.png?18183108224224727529");
+
+}
+
+.bespoke-product-description,
+.bespoke-product-purchase,
+.bespoke.product-photos {
+
+  display: block;
+  vertical-align: top;
+
+}
+
+.product-form #product-variants .selector-wrapper,
+.product-form #product-add {
+
+  display: block;
+
+}
+
+.product-form select,
+.product-form #product-add {
+
+  text-transform: uppercase;
+  border: 2px solid #000;
+  font-size: 12px;
+  width: 220px;
+  margin: auto;
+
+}
+
+.myaffix.affix,
+.myaffix.affix-bottom {
+
+    position: relative;
+
+  }
+
+.bespoke-inner {
+
+  transition: all 1s ease-in-out;
+  max-width: 450px;
+  margin: auto;
+
+}
+
+/* affix dt */
+
+@media screen and (min-width: 768px){
 
 .bespoke-product-description,
 .bespoke-product-purchase,
@@ -216,12 +274,6 @@ PRODUCT PAGES
 
 }
 
-.product-form #product-variants .selector-wrapper  {
-
-  display: block;
-
-}
-
 /* product photos */
 
 .bespoke.product-photos {
@@ -237,25 +289,19 @@ PRODUCT PAGES
 
 }
 
-/* social icons */
-
-.product .social-icons a {
-
-  background-image: url("//cdn.shopify.com/s/files/1/0760/4885/t/4/assets/social_spr_dark_2x.png?18183108224224727529");
-
-}
-
 /* affix */
 
-.myaffix.affix {
+  .myaffix.affix {
 
-  position: fixed;
-  top: 200px;
+    position: fixed;
+    top: 200px;
 
-}
+  }
 
-.myaffix.affix-bottom {
+  .myaffix.affix-bottom {
 
-  position: absolute;
+    position: absolute;
+
+  }
 
 }

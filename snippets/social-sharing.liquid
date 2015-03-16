@@ -2,8 +2,6 @@
 
   {% if template contains 'product' %}
 
-  <div class="share-label">{{ 'general.social.title' | t }}</div>
-
   {% assign url_to_share = shop.url | append: product.url %}
   {% capture img_to_share %}http:{{ product.featured_image | product_img_url: 'master' }}{% endcapture %}
   {% assign title_to_share = product.title %}
