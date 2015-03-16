@@ -12,6 +12,7 @@ RESET
 
 .container {
 
+  max-width: none;
   width: 100%;
 
 }
@@ -166,4 +167,95 @@ HOMEPAGE
 
 }
 
-.bespoke-journal-preview .read-more {}
+
+
+
+
+
+/*
+
+PRODUCT PAGES
+
+*/
+
+
+.bespoke-product-description,
+.bespoke-product-purchase,
+.bespoke.product-photos {
+
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+/* left and right content */
+
+.bespoke-product-description,
+.bespoke-product-purchase {
+
+  margin: 2.5%;
+  width: 30%;
+
+}
+
+.bespoke-product-description {
+
+  left: 0%;
+
+}
+
+.bespoke-product-purchase {
+
+  right: 0%;
+
+}
+
+.bespoke-inner {
+
+  max-width: 300px;
+
+}
+
+.product-form #product-variants .selector-wrapper  {
+
+  display: block;
+
+}
+
+/* product photos */
+
+.bespoke.product-photos {
+
+  width: 30%;
+
+}
+
+.bespoke.product-photos img {
+
+  display: block;
+  margin: auto;
+
+}
+
+/* social icons */
+
+.product .social-icons a {
+
+  background-image: url("//cdn.shopify.com/s/files/1/0760/4885/t/4/assets/social_spr_dark_2x.png?18183108224224727529");
+
+}
+
+/* affix */
+
+.myaffix.affix {
+
+  position: fixed;
+  top: 200px;
+
+}
+
+.myaffix.affix-bottom {
+
+  position: absolute;
+
+}

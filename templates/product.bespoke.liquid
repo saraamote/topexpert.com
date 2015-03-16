@@ -22,19 +22,23 @@
 
     <div class="myaffix bespoke-product-description">
 
-      <h1 itemprop="name">
+      <div class="bespoke-inner">
 
-        {{ product.title }}
+        <h1 itemprop="name">
 
-      </h1>
+          {{ product.title }}
 
-      <p itemprop="description">
+        </h1>
 
-        {{ product.description }}
+        <p itemprop="description">
 
-      </p>
+          {{ product.description }}
 
-      {% include 'social-sharing' %}
+        </p>
+
+        {% include 'social-sharing' %}
+
+      </div>
 
     </div>
 
@@ -279,67 +283,6 @@ jQuery(function($) {
 {% endif %}
 </script>
 
-<style>
-
-  .bespoke-product-description,
-  .bespoke-product-purchase,
-  .bespoke.product-photos {
-
-    display: inline-block;
-    vertical-align: top;
-
-  }
-
-  /* left and right content */
-
-  .bespoke-product-description,
-  .bespoke-product-purchase {
-
-    width: 30%;
-    background: pink;
-
-  }
-
-  .bespoke-product-description {
-
-    left: 0;
-
-  }
-
-  .bespoke-product-purchase {
-
-    right: 0;
-
-  }
-
-  /* product photos */
-
-  .bespoke.product-photos {
-
-    background: grey;
-    width: 40%;
-
-  }
-
-  .bespoke.product-photos img {
-
-    display: block;
-    margin: auto;
-
-  }
-
-
-  /* social icons */
-
-  .product .social-icons a {
-
-    background-image: url("//cdn.shopify.com/s/files/1/0760/4885/t/4/assets/social_spr_dark_2x.png?18183108224224727529");
-
-  }
-
-
-</style>
-
 <script type="text/javascript">
 
   $( function() {
@@ -362,21 +305,3 @@ jQuery(function($) {
 
 </script>
 
-<style>
-
-  .myaffix.affix {
-
-    transition:  all 1s;
-    position: fixed;
-    top: 200px;
-
-  }
-
-  .myaffix.affix-bottom {
-
-    transition:  all 1s;
-    position: absolute;
-
-  }
-
-</style>
