@@ -208,13 +208,25 @@ PRODUCT PAGES
 }
 
 .product-form select,
-.product-form #product-add {
+.product-form #add {
 
+  -webkit-transition: all 450ms ease-in-out;
+  transition: all 450ms ease-in-out;
   text-transform: uppercase;
+  outline: 2px solid #333;
   border: 2px solid #000;
+  border: 3px solid #fff;
   font-size: 12px;
   width: 220px;
   margin: auto;
+
+}
+
+
+.product-form #add:hover {
+
+  background: #000;
+  color: #fff;
 
 }
 
@@ -228,6 +240,7 @@ PRODUCT PAGES
 .bespoke-inner {
 
   transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
   max-width: 450px;
   margin: auto;
 
